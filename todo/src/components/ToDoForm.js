@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {toDoReducer, initialState} from "../reducers/reducer"
 
 
-const ToDoForm = () => {
+const ToDoForm = (props) => {
+// console.log(props.addTask)
 
 
     const handleChanges = (e) => {
         console.log(e.target.value)
 
     }
+
+    const [values, setValues] = useState("")
     return (
-        <form>
+        <form 
+        onSubmit={(e) => {
+            console.log(e)
+            e.preventDefault();
+            props.addTask(values)
+            setValues("")
+        }}
+        >
             <input
-            value=""
-            placeholder="TASK?" 
+            value={values}
+            placeholder="Add Tasks Here" 
             type="text"
             name="task"
-            onChange={handleChanges}
+            onChange={(event) => {
+                setValues(event.target.value)
+            }}
             />
-            <button>Add ToDo Task</button>
+            <button
+            type="submit">
+                Add ToDo Task</button>
         </form>
     )
 }

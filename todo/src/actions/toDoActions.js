@@ -1,9 +1,4 @@
-const ADD_TODO_ITEM = "ADD_TODO_ITEM"
-const TOGGLE_COMPLETED = "TOGGLE_COMPLETED"
+export const ADD_TODO_TASK = "ADD_TODO_TASK"
+export const TOGGLE_COMPLETED = "TOGGLE_COMPLETED"
+export const CLEAR_COMPLETED_TASK = "CLEAR_COMPLETED_TASK"
 
-export default { 
-    addTask: (newTask) => {
-        console.log("Add task action creator")
-        return({type: ADD_TODO_ITEM, payload: newTask})
-    }
-}
