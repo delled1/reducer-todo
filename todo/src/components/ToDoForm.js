@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import {toDoReducer, initialState} from "../reducers/reducer"
 
 
 const ToDoForm = (props) => {
